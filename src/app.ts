@@ -21,6 +21,11 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/api/v1/coupon/',coupon)
 
+app.get("/",(req, res)=>{
+  res.status(200).json({ 
+    "message": "Server is running"
+   });
+})
 // Connect to MongoDB
 db.connect(process.env.db_url, {
   useNewUrlParser: true,
